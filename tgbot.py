@@ -130,7 +130,6 @@ async def send_telegram_message(bot, post, is_official=False):
         )
     else:
         message = (
-            f"📣 <b>爪云相关讨论 {source_emoji}</b>\n\n"
             f"🔔 来源：{post['forum']}\n"
             f"💬 标题：{linked_title}"
         )
@@ -142,7 +141,7 @@ async def send_telegram_message(bot, post, is_official=False):
             parse_mode='HTML',
             disable_web_page_preview=True
         )
-        await asyncio.sleep(1)  # 使用异步睡眠
+        await asyncio.sleep(3)  # 增加到3秒间隔
     except Exception as e:
         logger.error(f"消息发送错误: {str(e)}")
 
